@@ -1,2 +1,0 @@
-# Accommodation-Locator
-Accommodation Locator
