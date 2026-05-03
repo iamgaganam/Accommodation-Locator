@@ -1,0 +1,212 @@
+.card {
+  background: white;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  cursor: pointer;
+  transition: all var(--transition);
+  border: 2px solid transparent;
+  animation: fadeInUp 0.3s ease-out;
+}
+
+.card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+
+.card.selected {
+  border-color: var(--primary-500);
+  box-shadow: 0 0 0 3px rgba(51, 109, 252, 0.15), var(--shadow-lg);
+}
+
+.card.compact {
+  display: flex;
+  flex-direction: row;
+  border-radius: var(--radius-lg);
+}
+
+.card.compact .imageWrapper {
+  width: 140px;
+  min-height: 110px;
+  flex-shrink: 0;
+}
+
+.card.compact .content {
+  padding: 12px;
+}
+
+.card.compact .title {
+  font-size: 14px;
+}
+
+.card.compact .features {
+  gap: 8px;
+}
+
+/* ─── Image ──────────────────────────────────────────────────────── */
+.imageWrapper {
+  position: relative;
+  height: 180px;
+  overflow: hidden;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.card:hover .image {
+  transform: scale(1.05);
+}
+
+.priceTag {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(8px);
+  color: white;
+  padding: 6px 12px;
+  border-radius: var(--radius);
+  font-weight: 700;
+  display: flex;
+  align-items: baseline;
+  gap: 1px;
+}
+
+.currency {
+  font-size: 13px;
+  font-weight: 600;
+  opacity: 0.9;
+}
+
+.price {
+  font-size: 18px;
+}
+
+.period {
+  font-size: 11px;
+  font-weight: 400;
+  opacity: 0.7;
+  margin-left: 2px;
+}
+
+.statusBadge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.statusApproved {
+  background: var(--success);
+  color: white;
+}
+
+.statusPending {
+  background: var(--warning);
+  color: var(--gray-900);
+}
+
+.statusRejected {
+  background: var(--danger);
+  color: white;
+}
+
+.imageCount {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 4px 8px;
+  border-radius: var(--radius);
+  font-size: 12px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* ─── Content ────────────────────────────────────────────────────── */
+.content {
+  padding: 16px;
+}
+
+.title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--gray-900);
+  margin-bottom: 6px;
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.address {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 13px;
+  color: var(--gray-500);
+  margin-bottom: 10px;
+}
+
+.address svg {
+  flex-shrink: 0;
+  color: var(--primary-500);
+}
+
+.features {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--gray-600);
+}
+
+.feature svg {
+  color: var(--gray-400);
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.type {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--primary-600);
+  background: var(--primary-50);
+  padding: 3px 8px;
+  border-radius: var(--radius-full);
+  letter-spacing: 0.5px;
+}
+
+.landlord {
+  font-size: 12px;
+  color: var(--gray-400);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

@@ -1,0 +1,244 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--gray-200);
+  transition: all var(--transition);
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 24px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+/* ─── Brand ──────────────────────────────────────────────────────── */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, var(--primary-600), var(--primary-700));
+  color: white;
+  box-shadow: 0 2px 8px rgba(29, 79, 241, 0.3);
+}
+
+.brandText {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.brandPrimary {
+  color: var(--primary-700);
+}
+
+.brandSecondary {
+  color: var(--gray-900);
+}
+
+/* ─── Nav Links ──────────────────────────────────────────────────── */
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.navLink {
+  padding: 8px 16px;
+  border-radius: var(--radius);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--gray-600);
+  transition: all var(--transition);
+  white-space: nowrap;
+}
+
+.navLink:hover {
+  color: var(--primary-700);
+  background: var(--primary-50);
+}
+
+.navLink.active {
+  color: var(--primary-700);
+  background: var(--primary-50);
+  font-weight: 600;
+}
+
+/* ─── Actions ────────────────────────────────────────────────────── */
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.authButtons {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.loginBtn {
+  padding: 8px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--gray-700);
+  border-radius: var(--radius);
+  transition: all var(--transition);
+}
+
+.loginBtn:hover {
+  color: var(--primary-700);
+  background: var(--gray-100);
+}
+
+.registerBtn {
+  padding: 8px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(135deg, var(--primary-600), var(--primary-700));
+  border-radius: var(--radius);
+  transition: all var(--transition);
+  box-shadow: 0 2px 8px rgba(29, 79, 241, 0.25);
+}
+
+.registerBtn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(29, 79, 241, 0.35);
+}
+
+/* ─── User Menu ──────────────────────────────────────────────────── */
+.userMenu {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-full);
+  background: linear-gradient(135deg, var(--primary-500), var(--primary-700));
+  color: white;
+  font-weight: 700;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.userInfo {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.userName {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--gray-900);
+}
+
+.userRole {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--gray-400);
+  text-transform: capitalize;
+}
+
+.logoutBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: var(--radius);
+  border: 1px solid var(--gray-200);
+  background: white;
+  color: var(--gray-500);
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.logoutBtn:hover {
+  color: var(--danger);
+  border-color: var(--danger);
+  background: var(--danger-light);
+}
+
+/* ─── Hamburger ──────────────────────────────────────────────────── */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  padding: 8px;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.hamburgerLine {
+  width: 20px;
+  height: 2px;
+  background: var(--gray-700);
+  border-radius: 2px;
+  transition: all var(--transition);
+}
+
+/* ─── Responsive ─────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .navLinks {
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background: white;
+    border-bottom: 1px solid var(--gray-200);
+    padding: 12px;
+    gap: 4px;
+    display: none;
+    box-shadow: var(--shadow-lg);
+  }
+
+  .navLinks.open {
+    display: flex;
+    animation: fadeInUp 0.2s ease-out;
+  }
+
+  .navLink {
+    width: 100%;
+    padding: 12px 16px;
+  }
+
+  .userInfo {
+    display: none;
+  }
+
+  .authButtons {
+    gap: 4px;
+  }
+}

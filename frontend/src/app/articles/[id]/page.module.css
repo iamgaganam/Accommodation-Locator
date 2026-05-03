@@ -1,0 +1,11 @@
+.page { min-height: calc(100vh - 64px); background: white; padding: 48px 0; }
+.container { max-width: 740px; margin: 0 auto; padding: 0 24px; }
+.backBtn { display: inline-flex; align-items: center; gap: 6px; padding: 8px 0; font-size: 14px; font-weight: 500; color: var(--gray-500); background: none; border: none; cursor: pointer; margin-bottom: 24px; font-family: var(--font-sans); }
+.backBtn:hover { color: var(--primary-600); }
+.article {}
+.date { font-size: 12px; font-weight: 600; color: var(--primary-600); text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 12px; }
+.article h1 { font-size: 36px; font-weight: 800; color: var(--gray-900); line-height: 1.2; letter-spacing: -0.5px; margin-bottom: 12px; }
+.author { font-size: 15px; color: var(--gray-500); margin-bottom: 32px; padding-bottom: 24px; border-bottom: 1px solid var(--gray-200); }
+.content { font-size: 16px; color: var(--gray-700); line-height: 1.8; }
+.content h2 { font-size: 22px; font-weight: 700; color: var(--gray-900); margin: 28px 0 12px; }
+.content p { margin-bottom: 16px; }

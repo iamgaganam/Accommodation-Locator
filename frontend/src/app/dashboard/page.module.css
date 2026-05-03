@@ -1,0 +1,114 @@
+.page { min-height: calc(100vh - 64px); background: var(--gray-50); }
+.container { max-width: 1200px; margin: 0 auto; padding: 32px 24px; }
+.header { margin-bottom: 32px; }
+.header h1 { font-size: 28px; font-weight: 800; color: var(--gray-900); letter-spacing: -0.5px; }
+.subtitle { font-size: 15px; color: var(--gray-500); margin-top: 4px; }
+
+/* Toolbar */
+.toolbar { display: flex; justify-content: flex-end; margin-bottom: 20px; }
+.addBtn { padding: 10px 20px; background: linear-gradient(135deg, var(--primary-600), var(--primary-700)); color: white; border: none; border-radius: var(--radius); font-weight: 600; font-size: 14px; cursor: pointer; transition: all var(--transition); font-family: var(--font-sans); text-decoration: none; display: inline-flex; }
+.addBtn:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(29,79,241,0.3); }
+
+/* Modal */
+.modal { position: fixed; inset: 0; z-index: 2000; background: rgba(0,0,0,0.5); backdrop-filter: blur(4px); display: flex; align-items: center; justify-content: center; padding: 24px; animation: fadeIn 0.2s; }
+.modalContent { background: white; border-radius: var(--radius-2xl); width: 100%; max-width: 700px; max-height: 90vh; overflow-y: auto; padding: 32px; }
+.modalHeader { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; }
+.modalHeader h2 { font-size: 22px; font-weight: 700; }
+.closeBtn { width: 36px; height: 36px; border-radius: var(--radius-full); border: 1px solid var(--gray-200); background: white; font-size: 16px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all var(--transition); }
+.closeBtn:hover { background: var(--gray-100); }
+
+/* Form */
+.propertyForm { display: flex; flex-direction: column; gap: 16px; }
+.formGrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; }
+.field { display: flex; flex-direction: column; gap: 5px; }
+.field label { font-size: 13px; font-weight: 600; color: var(--gray-700); }
+.field input, .field select, .field textarea { padding: 10px 12px; border: 1.5px solid var(--gray-200); border-radius: var(--radius); font-size: 14px; font-family: var(--font-sans); color: var(--gray-900); outline: none; transition: border-color var(--transition); }
+.field input:focus, .field select:focus, .field textarea:focus { border-color: var(--primary-500); box-shadow: 0 0 0 3px rgba(51,109,252,0.1); }
+.hint { font-size: 12px; color: var(--gray-400); }
+.submitBtn { padding: 12px; background: linear-gradient(135deg, var(--primary-600), var(--primary-700)); color: white; font-weight: 600; font-size: 15px; border: none; border-radius: var(--radius); cursor: pointer; transition: all var(--transition); font-family: var(--font-sans); }
+.submitBtn:hover:not(:disabled) { box-shadow: 0 4px 12px rgba(29,79,241,0.3); }
+.submitBtn:disabled { opacity: 0.7; cursor: not-allowed; }
+.checkboxLabel { display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 500; color: var(--gray-700); cursor: pointer; }
+
+/* Table */
+.tableWrapper { background: white; border-radius: var(--radius-xl); overflow: hidden; border: 1px solid var(--gray-200); }
+.table { width: 100%; border-collapse: collapse; }
+.table th { text-align: left; padding: 14px 16px; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: var(--gray-500); background: var(--gray-50); border-bottom: 1px solid var(--gray-200); }
+.table td { padding: 14px 16px; font-size: 14px; border-bottom: 1px solid var(--gray-100); vertical-align: middle; }
+.table tr:last-child td { border-bottom: none; }
+.table tr:hover { background: var(--gray-50); }
+.propertyCell { display: flex; align-items: center; gap: 12px; }
+.tableThumbnail { width: 56px; height: 42px; border-radius: var(--radius); object-fit: cover; }
+.emptyMsg { text-align: center; padding: 40px; color: var(--gray-500); font-size: 14px; }
+
+/* Status badges */
+.statusBadge { display: inline-block; padding: 3px 10px; border-radius: var(--radius-full); font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+.approved, .accepted { background: var(--success-light); color: #047857; }
+.pending { background: var(--warning-light); color: #92400e; }
+.rejected, .denied { background: var(--danger-light); color: #b91c1c; }
+.rejectionReason { font-size: 12px; color: var(--danger); margin-top: 4px; }
+
+/* Role badges */
+.roleBadge { display: inline-block; padding: 3px 10px; border-radius: var(--radius-full); font-size: 11px; font-weight: 600; text-transform: uppercase; }
+.role_admin { background: #ede9fe; color: #6d28d9; }
+.role_landlord { background: #fef3c7; color: #92400e; }
+.role_warden { background: #dbeafe; color: #1d4ed8; }
+.role_student { background: #d1fae5; color: #047857; }
+
+/* Action buttons */
+.actionBtns { display: flex; gap: 6px; align-items: center; }
+.editBtn { padding: 5px 12px; background: var(--gray-100); color: var(--gray-700); border: none; border-radius: var(--radius); font-size: 12px; font-weight: 600; cursor: pointer; transition: all var(--transition); font-family: var(--font-sans); }
+.editBtn:hover { background: var(--primary-50); color: var(--primary-600); }
+.deleteBtn { padding: 5px 12px; background: var(--danger-light); color: var(--danger); border: none; border-radius: var(--radius); font-size: 12px; font-weight: 600; cursor: pointer; transition: all var(--transition); font-family: var(--font-sans); }
+.deleteBtn:hover { background: var(--danger); color: white; }
+.uploadLabel { padding: 5px 10px; background: var(--info-light); color: var(--info); border-radius: var(--radius); font-size: 14px; cursor: pointer; }
+.acceptBtn { padding: 6px 14px; background: var(--success); color: white; border: none; border-radius: var(--radius); font-size: 12px; font-weight: 600; cursor: pointer; font-family: var(--font-sans); }
+.denyBtn { padding: 6px 14px; background: var(--danger); color: white; border: none; border-radius: var(--radius); font-size: 12px; font-weight: 600; cursor: pointer; font-family: var(--font-sans); }
+
+/* Filter/Tab bar */
+.filterBar, .tabBar { display: flex; gap: 4px; margin-bottom: 20px; background: var(--gray-100); padding: 4px; border-radius: var(--radius-lg); width: fit-content; }
+.filterBtn, .tabBtn { padding: 8px 18px; border: none; border-radius: var(--radius); font-size: 13px; font-weight: 500; color: var(--gray-600); background: transparent; cursor: pointer; transition: all var(--transition); font-family: var(--font-sans); }
+.filterActive, .tabActive { background: white; color: var(--gray-900); font-weight: 600; box-shadow: var(--shadow-sm); }
+
+/* Warden layout */
+.wardenLayout { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; height: calc(100vh - 280px); }
+.wardenList { overflow-y: auto; display: flex; flex-direction: column; gap: 8px; }
+.wardenMap { border-radius: var(--radius-xl); overflow: hidden; min-height: 400px; }
+.wardenCard { background: white; border-radius: var(--radius-lg); padding: 14px; border: 2px solid transparent; cursor: pointer; transition: all var(--transition); }
+.wardenCard:hover { box-shadow: var(--shadow-md); }
+.wardenSelected { border-color: var(--primary-500); box-shadow: 0 0 0 3px rgba(51,109,252,0.1); }
+.wardenCardRow { display: flex; gap: 12px; margin-bottom: 10px; }
+.wardenThumb { width: 80px; height: 60px; border-radius: var(--radius); object-fit: cover; flex-shrink: 0; }
+.wardenCardInfo { display: flex; flex-direction: column; gap: 2px; font-size: 13px; color: var(--gray-600); }
+.wardenCardInfo strong { font-size: 14px; color: var(--gray-900); }
+.wardenLandlord { color: var(--gray-400); font-style: italic; }
+.wardenActions { display: flex; gap: 6px; }
+
+/* Reservations */
+.section { margin-top: 40px; }
+.section h2 { font-size: 22px; font-weight: 700; margin-bottom: 16px; }
+.reservationList { display: flex; flex-direction: column; gap: 10px; }
+.reservationCard { background: white; border-radius: var(--radius-lg); padding: 16px; display: flex; justify-content: space-between; align-items: center; gap: 16px; border: 1px solid var(--gray-200); }
+.resInfo { flex: 1; font-size: 14px; }
+.resPropertyInfo { display: flex; gap: 12px; align-items: center; flex: 1; }
+.resThumb { width: 64px; height: 48px; border-radius: var(--radius); object-fit: cover; }
+.resMessage { font-size: 13px; color: var(--gray-500); font-style: italic; margin: 6px 0; }
+.resResponse { font-size: 13px; color: var(--primary-600); margin-top: 4px; }
+.resStatus { text-align: right; }
+.resActions { display: flex; gap: 6px; }
+
+/* Article list */
+.articleList { display: flex; flex-direction: column; gap: 8px; }
+.articleCard { background: white; border-radius: var(--radius-lg); padding: 16px; display: flex; justify-content: space-between; align-items: center; gap: 16px; border: 1px solid var(--gray-200); }
+
+/* Empty state */
+.emptyState { text-align: center; padding: 60px 24px; }
+.emptyState h3 { font-size: 20px; font-weight: 600; color: var(--gray-700); margin-bottom: 8px; }
+.emptyState p { font-size: 14px; color: var(--gray-500); margin-bottom: 20px; }
+
+@media (max-width: 768px) {
+  .wardenLayout { grid-template-columns: 1fr; height: auto; }
+  .wardenMap { min-height: 300px; }
+  .reservationCard { flex-direction: column; align-items: flex-start; }
+  .formGrid { grid-template-columns: 1fr; }
+}

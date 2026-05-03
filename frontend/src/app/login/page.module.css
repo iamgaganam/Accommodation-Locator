@@ -1,0 +1,230 @@
+.page {
+  min-height: calc(100vh - 64px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 24px;
+  background: linear-gradient(135deg, var(--gray-50), var(--primary-50));
+}
+
+.card {
+  width: 100%;
+  max-width: 440px;
+  background: white;
+  border-radius: var(--radius-2xl);
+  padding: 40px;
+  box-shadow: var(--shadow-xl);
+  animation: fadeInUp 0.4s ease-out;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.iconWrapper {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-xl);
+  background: linear-gradient(135deg, var(--primary-500), var(--primary-700));
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+}
+
+.header h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin-bottom: 4px;
+}
+
+.header p {
+  font-size: 14px;
+  color: var(--gray-500);
+}
+
+/* ─── Form ────────────────────────────────────────────────────────── */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.field label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--gray-700);
+}
+
+.field input,
+.field select,
+.field textarea {
+  padding: 10px 14px;
+  border: 1.5px solid var(--gray-200);
+  border-radius: var(--radius);
+  font-size: 14px;
+  font-family: var(--font-sans);
+  color: var(--gray-900);
+  transition: all var(--transition);
+  outline: none;
+  background: white;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  border-color: var(--primary-500);
+  box-shadow: 0 0 0 3px rgba(51, 109, 252, 0.1);
+}
+
+.field input::placeholder {
+  color: var(--gray-400);
+}
+
+.passwordWrapper {
+  position: relative;
+}
+
+.passwordWrapper input {
+  width: 100%;
+  padding-right: 60px;
+}
+
+.showPassword {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--primary-600);
+  cursor: pointer;
+}
+
+/* ─── Button ──────────────────────────────────────────────────────── */
+.submitBtn {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg, var(--primary-600), var(--primary-700));
+  color: white;
+  font-weight: 600;
+  font-size: 15px;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: all var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+}
+
+.submitBtn:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(29, 79, 241, 0.3);
+}
+
+.submitBtn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.spinner {
+  width: 20px;
+  height: 20px;
+  border: 2.5px solid rgba(255, 255, 255, 0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+}
+
+/* ─── Divider ─────────────────────────────────────────────────────── */
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 24px 0;
+}
+
+.divider::before,
+.divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--gray-200);
+}
+
+.divider span {
+  font-size: 12px;
+  color: var(--gray-400);
+  font-weight: 500;
+}
+
+/* ─── Switch Text ─────────────────────────────────────────────────── */
+.switchText {
+  text-align: center;
+  font-size: 14px;
+  color: var(--gray-500);
+}
+
+.switchLink {
+  color: var(--primary-600);
+  font-weight: 600;
+  transition: color var(--transition);
+}
+
+.switchLink:hover {
+  color: var(--primary-700);
+}
+
+/* ─── Test Accounts ──────────────────────────────────────────────── */
+.testAccounts {
+  margin-top: 24px;
+  padding: 16px;
+  background: var(--gray-50);
+  border-radius: var(--radius-lg);
+  border: 1px dashed var(--gray-200);
+}
+
+.testTitle {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--gray-500);
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.testGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+}
+
+.testBtn {
+  padding: 6px 8px;
+  font-size: 11px;
+  font-weight: 600;
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius);
+  background: white;
+  color: var(--gray-700);
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.testBtn:hover {
+  border-color: var(--primary-500);
+  color: var(--primary-600);
+  background: var(--primary-50);
+}
